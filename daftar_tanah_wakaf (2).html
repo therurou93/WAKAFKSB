@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>DAFTAR TANAH WAKAF KABUPATEN SUMBAWA BARAT</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 40px;
+            background: linear-gradient(to right, #f0f2f5, #e2e8f0);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            text-shadow: 1px 1px 2px #ccc;
+        }
+        div.controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        input, select, button {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 2px 2px 6px #aaa;
+            font-size: 14px;
+        }
+        button {
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        button:hover {
+            background-color: #357ABD;
+            transform: scale(1.05);
+        }
+        table.wakaf-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .wakaf-table th, .wakaf-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .wakaf-table th {
+            background: linear-gradient(to right, #4a90e2, #357ABD);
+            color: white;
+        }
+        .wakaf-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .wakaf-table tr:hover {
+            background-color: #eef;
+            transform: scale(1.01);
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <h2>DAFTAR TANAH WAKAF KABUPATEN SUMBAWA BARAT</h2>
+    
+<div class="controls" style="flex-direction: column; align-items: center; gap: 15px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <input type="text" id="searchInput" placeholder="🔍 Cari data wakaf...">
+        <select id="filterKecamatan">
+            <option value="">📍 Semua Kecamatan</option>
+            <option value=""></option><option value="BRANG ENE">BRANG ENE</option><option value="BRANG REA">BRANG REA</option><option value="JEREWEH">JEREWEH</option><option value="MALUK">MALUK</option><option value="POTO TANO">POTO TANO</option><option value="SEKONGKANG">SEKONGKANG</option><option value="SETELUK">SETELUK</option><option value="TALIWANG">TALIWANG</option>
+        </select>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <button onclick="window.print()">🖨️ Cetak</button>
+        <button onclick="exportTableToExcel('wakaf-table', 'data_wakaf')">📥 Download Excel</button>
+        <button onclick="generatePDF()">📄 Download PDF</button>
+    </div>
+</div>
+
+    <table border="1" id="wakaf-table" class="wakaf-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th>No</th>
+      <th>Desa/Kelurahan</th>
+      <th>Kecamatan</th>
+      <th>Luas (m²)</th>
+      <th>Nazir</th>
+      <th>Wakif</th>
+      <th>Penggunaan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>KEMUNING</td>
+      <td>SEKONGKANG</td>
+      <td>585</td>
+      <td>H. ABDUL RASID</td>
+      <td>ABDUL HAMIM</td>
+      <td>MASJID BAABUSSALAM</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>KEMUNING</td>
+      <td>SEKONGKANG</td>
+      <td>666</td>
+      <td>ANDONG NYOMPA</td>
+      <td>HJ. HASIPA UMAR UDIN M</td>
+      <td>MUSHALLA BAITU IMAN</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>KEMUNING</td>
+      <td>SEKONGKANG</td>
+      <td>225</td>
+      <td>H.ABD.KAFI</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TONGO</td>
+      <td>SEKONGKANG</td>
+      <td>7733</td>
+      <td>UMAR FITRAH, S.Ag</td>
+      <td>H.M. FITRAH</td>
+      <td>YAYASAN MANBAUL ULUM</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TONGO</td>
+      <td>SEKONGKANG</td>
+      <td>4379</td>
+      <td>H. RAHMAD</td>
+      <td>H.M. FITRAH</td>
+      <td>YAYASAN AL-FURQON</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>TONGO</td>
+      <td>SEKONGKANG</td>
+      <td>31250</td>
+      <td>H. RAHMAD</td>
+      <td>H.M. FITRAH</td>
+      <td>YAYASAN AL-FURQON</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TONGO</td>
+      <td>SEKONGKANG</td>
+      <td>345</td>
+      <td>NURMAN HAKIM</td>
+      <td>HASANUDDIN S</td>
+      <td>MUSHALLA AL-MUHAJIRIN</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>TONGO</td>
+      <td>SEKONGKANG</td>
+      <td>347</td>
+      <td>H. RIDWAN</td>
+      <td>H. ZAINUDDIN</td>
+      <td>MASJID NURUL IMAN</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>SEKONGKANG BAWAH</td>
+      <td>SEKONGKANG</td>
+      <td>942</td>
+      <td>H. M. NURDIN</td>
+      <td>MARIAM</td>
+      <td>MASJID AL-IKHLAS</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>SEKONGKANG BAWAH</td>
+      <td>SEKONGKANG</td>
+      <td>585</td>
+      <td>ABDUL MURAD</td>
+      <td>AHMAD BUDE</td>
+      <td>MUSHALLA AL-MUHAJIRIN</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>SEKONGKANG BAWAH</td>
+      <td>SEKONGKANG</td>
+      <td>769</td>
+      <td>H.SANAPIAH</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>SEKONGKANG ATAS</td>
+      <td>SEKONGKANG</td>
+      <td>609</td>
+      <td>MUSLIMIN</td>
+      <td>SAKUPIL</td>
+      <td>MUSHll RAUDATUL JANNAH</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>SEKONGKANG ATAS</td>
+      <td>SEKONGKANG</td>
+      <td>831</td>
+      <td>M. YUSUF</td>
+      <td>HASAN</td>
+      <td>MUSHALLA AL-MUKMININ</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>SEKONGKANG ATAS</td>
+      <td>SEKONGKANG</td>
+      <td>529</td>
+      <td>H. MASLUKANO</td>
+      <td>M. RASYIDIN</td>
+      <td>MASJID BAITUL GHAPPUR</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>SEKONGKANG ATAS</td>
+      <td>SEKONGKANG</td>
+      <td>347</td>
+      <td>IWAN SHOHRI</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>BELO</td>
+      <td>JEREWEH</td>
+      <td>446</td>
+      <td>TARMIZI</td>
+      <td>ASSHARUDDIN MUKHTAR</td>
+      <td>MUSHALLA</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>BELO</td>
+      <td>JEREWEH</td>
+      <td>638</td>
+      <td>RUSMAN</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>BERU</td>
+      <td>JEREWEH</td>
+      <td>343</td>
+      <td>RESTU HAKI M</td>
+      <td>MUHAMMAD NASIR, ST</td>
+      <td>MUSHALLA</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>BERU</td>
+      <td>JEREWEH</td>
+      <td>675</td>
+      <td>SADIKIN</td>
+      <td>NURDIN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>GOA</td>
+      <td>JEREWEH</td>
+      <td>2285</td>
+      <td>MAHYUDDIN</td>
+      <td>MAHYUDDIN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>GOA</td>
+      <td>JEREWEH</td>
+      <td>1735</td>
+      <td>MUHAMMAD SALEH B</td>
+      <td>IMRAN ZAIN</td>
+      <td>MASJID</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>BENETE</td>
+      <td>MALUK</td>
+      <td>1080</td>
+      <td>H. ISMAIL</td>
+      <td>ABDUL MAJID R</td>
+      <td>MASJID</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>BENETE</td>
+      <td>MALUK</td>
+      <td>717</td>
+      <td>M. DAUD</td>
+      <td>MAX DARMAWAN</td>
+      <td>MASJID</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>BENETE</td>
+      <td>MALUK</td>
+      <td>363</td>
+      <td>SYAMSUL HIDAYAT</td>
+      <td>MAX DARMAWAN</td>
+      <td>MASJID AL-HIJRAH</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>PASIR PUTIH</td>
+      <td>MALUK</td>
+      <td>1735</td>
+      <td>AMAQ SUKUR</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>SENAYAN</td>
+      <td>POTO TANO</td>
+      <td>314</td>
+      <td>H.RASID</td>
+      <td>SULAIMAN</td>
+      <td>MASJID AR-RAHMAN</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>MANTAR</td>
+      <td>POTO TANO</td>
+      <td>330</td>
+      <td>SUMBA SUKANG</td>
+      <td>M. SALEH CEBUNG</td>
+      <td>MASJID</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>SENAYAN</td>
+      <td>POTO TANO</td>
+      <td>946</td>
+      <td>AHMAD AMIN</td>
+      <td>MUHAMMAD AJA</td>
+      <td>MASJID NURUL IMAN</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>SENAYAN</td>
+      <td>POTO TANO</td>
+      <td>559</td>
+      <td>H. ABDUL HARIS ZAMAN</td>
+      <td>H. MUHAMAD TAYUB SAPAR</td>
+      <td>MASJID AR-RAHMAN</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>SENAYAN</td>
+      <td>POTO TANO</td>
+      <td>848</td>
+      <td>H. GANI</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>MUJAHIDIN</td>
+      <td>BRANG ENE</td>
+      <td>1140</td>
+      <td>HAERUDDIN</td>
+      <td>H. JUNAIDI</td>
+      <td>MASJID AL-MUJAHIDIN</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>MURA</td>
+      <td>TALIWANG</td>
+      <td>360</td>
+      <td>MASADAH</td>
+      <td>MUSTAFA HASAN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>MURA</td>
+      <td>TALIWANG</td>
+      <td>480</td>
+      <td>H. NURDIN</td>
+      <td>H. IBRAHIM</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>MURA</td>
+      <td>TALIWANG</td>
+      <td>219</td>
+      <td>HASANUDIN</td>
+      <td>SUHERMAN, A.Md</td>
+      <td>Musholla</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>SETELUK ATAS</td>
+      <td>SETELUK</td>
+      <td>150</td>
+      <td>H.A.WAHAB</td>
+      <td>IRWAN SANDI HAMIM</td>
+      <td>Musholla</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>SETELUK ATAS</td>
+      <td>SETELUK</td>
+      <td>1494</td>
+      <td>H. BASAR</td>
+      <td>NURLANA</td>
+      <td>MASJID UMMUL QURO</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>SETELUK TENGAH</td>
+      <td>SETELUK</td>
+      <td>279</td>
+      <td>SUKKAGAU</td>
+      <td>MASDAR ARMA, SE,M.Si</td>
+      <td>Musholla Al-Ikhlas</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>SETELUK TENGAH</td>
+      <td>SETELUK</td>
+      <td>120</td>
+      <td>MUSLIMIN</td>
+      <td>FATA CORA</td>
+      <td>Musholla</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>SETELUK TENGAH</td>
+      <td>SETELUK</td>
+      <td>195</td>
+      <td>A. RAHMAN</td>
+      <td>H. ILIK</td>
+      <td>Musholla Al-Raodah</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>LOKA</td>
+      <td>SETELUK</td>
+      <td>167</td>
+      <td>M. ALI WARDANA</td>
+      <td>DRS. H. MUCHSIN HAMIM</td>
+      <td>Musholla</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>AIR SUNING</td>
+      <td>SETELUK</td>
+      <td>602</td>
+      <td>H. NAIMUDDIN</td>
+      <td>H. MUHAMMAD SALEH</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>KELANIR</td>
+      <td>SETELUK</td>
+      <td>520</td>
+      <td>H. MAHRAM</td>
+      <td>NURHASANAH</td>
+      <td>Musholla</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>KELANIR</td>
+      <td>SETELUK</td>
+      <td>403</td>
+      <td>H. MAHRAM</td>
+      <td>H. SUDIRMAN</td>
+      <td>masjid</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>TAPIR</td>
+      <td>SETELUK</td>
+      <td>184</td>
+      <td>ZULKIFLI, S.PdI</td>
+      <td>H. ILIK</td>
+      <td>MASJID AR-RAHMAN</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>1900</td>
+      <td>H. ANDULLATIF</td>
+      <td>SARUJI BIN BOSANG</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>1430</td>
+      <td>HAJI MASRANG</td>
+      <td>HAJI TOYANG BIN MANDO</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>5928</td>
+      <td>AGUS KURNIAWAN</td>
+      <td>h. SYAMSUL ISMAIN</td>
+      <td>PNDOK PESANTREN HIMMATUL UMMAH</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>4836</td>
+      <td>AGUS KURNIAWAN</td>
+      <td>h. SYAMSUL ISMAIN</td>
+      <td>PNDOK PESANTREN HIMMATUL UMMAH</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>472</td>
+      <td>H. BASRAN</td>
+      <td>H. NURDIN BAJING</td>
+      <td>MASJID NURUL HIKMAH</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>705</td>
+      <td>H. BASRAN</td>
+      <td>IBRAHIM</td>
+      <td>MASJID AL-MUJAHIDIN</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>381</td>
+      <td>ABDUL HAMZAH</td>
+      <td>MANSYUR HAQ</td>
+      <td>MASJID NURUL IMAN</td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>SAPUGARA BRE</td>
+      <td>BRANG REA</td>
+      <td>4710</td>
+      <td>H. SYAMSUL ISMAIN</td>
+      <td>MUCHTAR LUTTFIL, SH</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>TEPAS</td>
+      <td>BRANG REA</td>
+      <td>891</td>
+      <td>MUHAMAD BAGEP</td>
+      <td>H. HAERUDDIN SALEH</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>TEPAS</td>
+      <td>BRANG REA</td>
+      <td>947</td>
+      <td>H. MUHAMAD BASARY</td>
+      <td>ZAKARIYA</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>LAMUNTET</td>
+      <td>BRANG REA</td>
+      <td>504</td>
+      <td>KAMARUDDIN</td>
+      <td>KAMARUDDIN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>BANGKET MONTE</td>
+      <td>BRANG REA</td>
+      <td>683</td>
+      <td>ARIYANTO</td>
+      <td>H. MUHAMMAD SALEH</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>BANGKET MONTE</td>
+      <td>BRANG REA</td>
+      <td>625</td>
+      <td>M. ALI WARDANA</td>
+      <td>M. MUSTARAN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>MOTENG</td>
+      <td>BRANG REA</td>
+      <td>500</td>
+      <td>H. A. MUNIB</td>
+      <td>BURHANUDDIN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>TEPAS SEPAKAT</td>
+      <td>BRANG REA</td>
+      <td>994</td>
+      <td>ISMAIL DIN</td>
+      <td>H. UMAR</td>
+      <td>MASJID AR-RAHMAN</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>TEPAS SEPAKAT</td>
+      <td>BRANG REA</td>
+      <td>449</td>
+      <td>MUSTARAM, A.Ma</td>
+      <td>MUSTAR</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>TEPAS SEPAKAT</td>
+      <td>BRANG REA</td>
+      <td>547</td>
+      <td>SAMPURNA, S.HUT</td>
+      <td>ABDUL KARIM</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>DESA BERU</td>
+      <td>BRANG REA</td>
+      <td>920</td>
+      <td>M. ALI. P</td>
+      <td>M. ALI P</td>
+      <td>MASJID</td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>DESA BERU</td>
+      <td>BRANG REA</td>
+      <td>834</td>
+      <td>M. ALI. P</td>
+      <td>BADARIAH, S.Pd</td>
+      <td>MASJID ALHIDAYAH</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>DESA BERU</td>
+      <td>BRANG REA</td>
+      <td>238</td>
+      <td>ZAINUDDIN, S.Pd</td>
+      <td>FARDAN, SPD</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>DESA BERU</td>
+      <td>BRANG REA</td>
+      <td>283</td>
+      <td>PARMONO</td>
+      <td>H. PARMONO, S.Pd</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>DALAM</td>
+      <td>TALIWANG</td>
+      <td>134</td>
+      <td>HAJI ABDULLAH HAMID</td>
+      <td>TAUHID ANANG</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>DALAM</td>
+      <td>TALIWANG</td>
+      <td>706</td>
+      <td>ZAINUL ARIFIN, S.Sos</td>
+      <td>H. MAKASAU INO</td>
+      <td>MASJID ABDUL MAJID</td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>ARAB KENANGAN</td>
+      <td>TALIWANG</td>
+      <td>357</td>
+      <td>MUHAMMAD ALWAN</td>
+      <td>H.SALEH ARDOLLAH</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>ARAB KENANGAN</td>
+      <td>TALIWANG</td>
+      <td>320</td>
+      <td>SEGAP ALWI</td>
+      <td>ABDUL HALIK</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>ARAB KENANGAN</td>
+      <td>TALIWANG</td>
+      <td>264</td>
+      <td>HASAN HINDUAN</td>
+      <td>USMAN HASAN HAIRID</td>
+      <td>MASJID AL-KHAIRIYAH</td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>ARAB KENANGAN</td>
+      <td>TALIWANG</td>
+      <td>300</td>
+      <td>MUHAMMAD ALWAN</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>ARAB KENANGAN</td>
+      <td>TALIWANG</td>
+      <td>766</td>
+      <td>ABDUL MAJID BAFADAL</td>
+      <td>M.MUSTAR</td>
+      <td>MASJID ADDA'WAH</td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>2899</td>
+      <td>MUHADLI</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>409</td>
+      <td>SORA</td>
+      <td>ROHANI, S.Pd</td>
+      <td>MASJID</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>164</td>
+      <td>MOHAMMAD SAIPUDDIN, S.Sd.MM</td>
+      <td>MOHAMMAD SAIPUDDIN, S.Sd.MM</td>
+      <td>YAYASAN BABURRAHMAN</td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>851</td>
+      <td>H.MANSYUR ASWIN</td>
+      <td>NURULLAH</td>
+      <td>MASJID NURULLAH</td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>1929</td>
+      <td>H.ISMAIL S.AP</td>
+      <td>HUSEN BAFADAL</td>
+      <td>MASJID AL-IKHLAS</td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>726</td>
+      <td>ABDUL AZIZ, S.Pd</td>
+      <td>ABDUL MUIN, S.Pd</td>
+      <td>MASJID AL-AZIZ</td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>574</td>
+      <td>SURATMAN, ST</td>
+      <td>Dr.Ir.H.MUSYAFIRIN, MM</td>
+      <td>MASJID ASY-SYAKIRIN</td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>252</td>
+      <td>M.SAID ISMAIL, S.Ag</td>
+      <td>REZA ALBAR</td>
+      <td>MASJID AL-MUJAHIRIN</td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>827</td>
+      <td>AGUS DANUROSO</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>82</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>2105</td>
+      <td>SARUJI</td>
+      <td>ASIM BIN ATIP</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>83</td>
+      <td>BUGIS</td>
+      <td>TALIWANG</td>
+      <td>1041</td>
+      <td>M. SAID ISMAIL</td>
+      <td>H. MUSTAFA BAWAFIE</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>84</td>
+      <td>TELAGA BERTONG</td>
+      <td>TALIWANG</td>
+      <td>14835</td>
+      <td>ZULKIFLI RAHMAN</td>
+      <td>H.HUSAIN AS</td>
+      <td>MASJID</td>
+    </tr>
+    <tr>
+      <td>85</td>
+      <td>TELAGA BERTONG</td>
+      <td>TALIWANG</td>
+      <td>144</td>
+      <td>MANURUNG, S.Pd</td>
+      <td>RIYADI, SE</td>
+      <td>MASJID AS-SALAM</td>
+    </tr>
+    <tr>
+      <td>86</td>
+      <td>TELAGA BERTONG</td>
+      <td>TALIWANG</td>
+      <td>302</td>
+      <td>MANURUNG, S.Pd</td>
+      <td>RIYADI, SE</td>
+      <td>MASJID AS-SALAM</td>
+    </tr>
+    <tr>
+      <td>87</td>
+      <td>TELAGA BERTONG</td>
+      <td>TALIWANG</td>
+      <td>1049</td>
+      <td>AGUS BAJURI</td>
+      <td>NYARNO</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>88</td>
+      <td>TELAGA BERTONG</td>
+      <td>TALIWANG</td>
+      <td>668</td>
+      <td>MUSYABBIHIN</td>
+      <td>HENDRA GUNAWAN</td>
+      <td>MASJID AL-FITRAH</td>
+    </tr>
+    <tr>
+      <td>89</td>
+      <td>TELAGA BERTONG</td>
+      <td>TALIWANG</td>
+      <td>602</td>
+      <td>SYAEFULLAH</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>KUANG</td>
+      <td>TALIWANG</td>
+      <td>747</td>
+      <td>ISKANDAR</td>
+      <td>HAJI MUHAMAD ZAIN MAJID</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>91</td>
+      <td>BATU PUTIH</td>
+      <td>TALIWANG</td>
+      <td>767</td>
+      <td>ABDUL MUJIB</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>92</td>
+      <td>BATU PUTIH</td>
+      <td>TALIWANG</td>
+      <td>5778</td>
+      <td>IMRAN</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>93</td>
+      <td>BATU PUTIH</td>
+      <td>TALIWANG</td>
+      <td>325</td>
+      <td>SIRAJUDDIN</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>94</td>
+      <td>BATU PUTIH</td>
+      <td>TALIWANG</td>
+      <td>2105</td>
+      <td>SAMSUDDIN, S.Sos</td>
+      <td>ASIM BIN ATIP</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>BATU PUTIH</td>
+      <td>TALIWANG</td>
+      <td>634</td>
+      <td>SAMSUDDIN, S.Sos</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>96</td>
+      <td>MENALA</td>
+      <td>TALIWANG</td>
+      <td>15625</td>
+      <td>HAJI IBRAHIM SIHAB</td>
+      <td>HAJI AHMAD SAGIR</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>97</td>
+      <td>MENALA</td>
+      <td>TALIWANG</td>
+      <td>1383</td>
+      <td>MUHAMAD AH</td>
+      <td>HAJI MUHAMMAD YANI</td>
+      <td>KEMASLAHATAN MASJID</td>
+    </tr>
+    <tr>
+      <td>98</td>
+      <td>SAMPIR</td>
+      <td>TALIWANG</td>
+      <td>421</td>
+      <td>HAJI ZULKIFLI MUHADLI</td>
+      <td>ZAKARIYA BEKARANG</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>99</td>
+      <td>SAMPIR</td>
+      <td>TALIWANG</td>
+      <td>718</td>
+      <td>HAIRIL WANSA ZAKARIAH</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>BANJAR</td>
+      <td>TALIWANG</td>
+      <td>1038</td>
+      <td>MUSTARAM, A.Ma</td>
+      <td>LALU DARMAJI</td>
+      <td>MASJID NURUL IMAN</td>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td>LABUAN KERTASARI</td>
+      <td>TALIWANG</td>
+      <td>838</td>
+      <td>SAHABUDDIN</td>
+      <td>H.MUHAMMAD NUR</td>
+      <td>MASJID NURUL HIDAYAH</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td>LABUAN KERTASARI</td>
+      <td>TALIWANG</td>
+      <td>371</td>
+      <td>SUDIRMAN, S.Pd</td>
+      <td>HAJI ABDUL KARIM</td>
+      <td>MASJID NURUL IMAN</td>
+    </tr>
+    <tr>
+      <td>103</td>
+      <td>LABUAN LALAR</td>
+      <td>TALIWANG</td>
+      <td>312</td>
+      <td>ABDUL MUIN</td>
+      <td>RAJAB BIN TAHIR</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>104</td>
+      <td>LABUAN LALAR</td>
+      <td>TALIWANG</td>
+      <td>650</td>
+      <td>BURHANUDDIN</td>
+      <td>HAJI MUHAMMAD TAYEB</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>TOTAL LUAS</td>
+      <td></td>
+      <td></td>
+      <td>162182</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const filterSelect = document.getElementById("filterKecamatan");
+    const table = document.querySelector(".wakaf-table");
+    const rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+    function filterTable() {
+        const searchText = searchInput.value.toLowerCase();
+        const selectedKecamatan = filterSelect.value.toLowerCase();
+
+        for (let row of rows) {
+            const cells = row.getElementsByTagName("td");
+            const rowText = row.innerText.toLowerCase();
+            const kecamatan = cells[2].innerText.toLowerCase();
+
+            const matchesSearch = rowText.includes(searchText);
+            const matchesFilter = selectedKecamatan === "" || kecamatan === selectedKecamatan;
+
+            row.style.display = matchesSearch && matchesFilter ? "" : "none";
+        }
+    }
+
+    searchInput.addEventListener("input", filterTable);
+    filterSelect.addEventListener("change", filterTable);
+});
+</script>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+function exportTableToExcel(tableID, filename = ''){
+    const dataType = 'application/vnd.ms-excel';
+    const tableSelect = document.getElementById(tableID);
+    const tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+    const downloadLink = document.createElement("a");
+    document.body.appendChild(downloadLink);
+
+    filename = filename ? filename + '.xls' : 'excel_data.xls';
+    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    downloadLink.download = filename;
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
+
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('l', 'pt', 'a4');
+    const table = document.querySelector('.wakaf-table');
+
+    html2canvas(table).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = 780;
+        const pageHeight = 595;
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        doc.addImage(imgData, 'PNG', 20, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            doc.addPage();
+            doc.addImage(imgData, 'PNG', 20, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
+
+        doc.save('data_wakaf.pdf');
+    });
+}
+</script>
+
+</body>
+</html>
